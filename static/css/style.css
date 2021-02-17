@@ -1,0 +1,24 @@
+.margin-0-auto {
+    margin: 0 auto;
+}
+
+.table-style {
+    table-layout: fixed;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    border-collapse: collapse;
+}
+
+.table-style table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table-style th, td {
+    width: 5%;
+}
+
+.table-style th {
+    text-align: center;
+}
