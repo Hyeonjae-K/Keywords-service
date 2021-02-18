@@ -14,7 +14,6 @@ with open('./test-data/data/sites.txt', 'r', encoding='utf-8') as f:
             break
         sites[title] = url
 
-print(sites)
 
 def set_data():
     dic.clear()
