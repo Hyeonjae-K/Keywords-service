@@ -20,6 +20,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
+                        {% for i in range(10) %}
+                        <p>{{ i }}</p>
+                        {% endfor %}
                         {% for site in sites %}
                         <a class="nav-link navbar-link" href="#">{{ site }}</a>
                         {% endfor %}
