@@ -1,5 +1,5 @@
 body {
-    background-color: #35363a;
+    background-color: #2d283e;
 }
 
 .margin-0-auto {
@@ -11,7 +11,7 @@ body {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 60px;
+    margin-top: 56px;
 }
 
 .table-style th[scope=row] {
@@ -21,12 +21,12 @@ body {
 }
 
 .site-link {
-    color: rgb(138, 180, 248);
+    color: #d1d7e0;
     text-decoration: none;
 }
 
 .site-link:hover {
-    color: #3d8bfd;
+    color: #4c495d;
 }
 
 .keyword-link {
@@ -40,4 +40,32 @@ body {
 
 .keyword-link span {
     max-width: 100%;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-bg {
+    background-color: #564f6f;
+}
+
+.navbar-link {
+    color: #d1d7e0;
+    text-decoration: none;
+}
+
+.navbar-link:hover {
+    color: #802bb1
+}
+
+.toggle-border {
+    border: thick double #2d283e;
+}
+
+.toggle-text-color {
+    color: #2d283e;
 }

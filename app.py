@@ -4,8 +4,15 @@ from flask import Flask, render_template
 
 
 app = Flask(__name__)
-sites = ["Google", "Nate", "Zum", "Dreamwiz", "KOREA.COM"]
+sites = {}
 dic = {}
+
+with open('./test-data/data/sites.txt', 'r', encoding='utf-8') as f:
+    while True:
+        title, space, url = f.readline().strip().rpartition(" ")
+        if title == '':
+            break
+        sites[title] = url
 
 
 def set_data():
@@ -36,7 +43,7 @@ def set_data():
 @app.route('/')
 def index():
     set_data()
-    return render_template("index.html", data=dic)
+    return render_template("index.html", data=dic, sites=sites)
 
 
 # scheduler = BackgroundScheduler()
