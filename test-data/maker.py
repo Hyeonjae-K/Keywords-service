@@ -9,10 +9,18 @@ def random_string(string_len):
 
 
 sites = ["Google", "Nate", "Zum", "Dreamwiz", "KOREA.COM"]
+f = open("./data/test.txt", "a", encoding="utf-8")
 
 for hour in range(24):
-    dataDic = {}
+    f.write("{time:02d}\n".format(time=hour))
+
     for site in sites:
-        dataList = []
+        f.write(site+"\n")
+
         for rank in range(10):
-            dataList.append(random_string(random.randint(2, 10)))
+            title = random_string(random.randint(1, 10))
+            url = random_string(random.randint(20, 50))
+
+            f.write(title + " " + url + "\n")
+
+    f.write("\n")
