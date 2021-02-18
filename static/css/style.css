@@ -1,24 +1,39 @@
+body {
+    background-color: #35363a;
+}
+
 .margin-0-auto {
     margin: 0 auto;
 }
 
 .table-style {
     table-layout: fixed;
+    width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 5%;
-    border-collapse: collapse;
+    margin-top: 60px;
 }
 
-.table-style table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-.table-style th, td {
-    width: 5%;
-}
-
-.table-style th {
+.table-style th[scope=row] {
+    width: 60px;
     text-align: center;
+    color: #dadce0;
+}
+
+.site-link {
+    color: rgb(138, 180, 248);
+    text-decoration: none;
+}
+
+.site-link:hover {
+    color: #3d8bfd;
+}
+
+.keyword-link {
+    color: white;
+    text-decoration: none;
+}
+
+.keyword-link:hover {
+    color: white;
 }
