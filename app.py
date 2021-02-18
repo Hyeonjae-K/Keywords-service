@@ -14,23 +14,26 @@ def set_data():
 
     for site in sites:
         path = "./test-data/data/{site}/{date}.txt".format(site=site, date=date)
-        times = []
-        titles = []
-        urls = []
+        dic[site] = {}
 
         with open(path, "r", encoding="utf-8") as f:
             while True:
                 rec_time = f.readline().strip()
+                titles = []
+                urls = []
+
                 if rec_time == '':
                     break
                 else:
-                    times.append(rec_time)
                     for i in range(10):
                         title, space, url = f.readline().strip().rpartition(" ")
                         titles.append(title)
                         urls.append(url)
 
-        dic[site] = [times, titles, urls]
+                    dic[site].update({rec_time: [titles, urls]})
+
+    with open('./test.txt', "w", encoding="utf-8") as f:
+        f.write(str(dic))
 
 
 @app.route('/')
