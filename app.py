@@ -7,12 +7,12 @@ app = Flask(__name__)
 sites = {}
 dic = {}
 
-with open('./test-data/data/sites.txt', 'r', encoding='utf-8') as f:
-    while True:
-        title, space, url = f.readline().strip().rpartition(" ")
-        if title == '':
-            break
-        sites[title] = url
+# with open('./test-data/data/sites.txt', 'r', encoding='utf-8') as f:
+#     while True:
+#         title, space, url = f.readline().strip().rpartition(" ")
+#         if title == '':
+#             break
+#         sites[title] = url
 
 
 def set_data():
