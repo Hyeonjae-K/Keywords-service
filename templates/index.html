@@ -20,11 +20,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="#">Google</a>
-                    <a class="nav-link" href="#">Nate</a>
-                    <a class="nav-link" href="#">Zum</a>
-                    <a class="nav-link" href="#">DreamWiz</a>
-                    <a class="nav-link" href="#">KOREA.COM</a>
+                    {% for site in sites %}
+                    <a class="nav-link" href="{{ sites[site] }}">{{ site }}</a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -46,7 +44,9 @@
             <tr>
                 <th scope="row">{{ rank + 1 }}</th>
                 {% for site in data %}
-                <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}"><span class="align-middle d-inline-block text-truncate">{{ data[site][time][0][rank] }}</span></a></td>
+                <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}"><span
+                            class="align-middle d-inline-block text-truncate">{{ data[site][time][0][rank] }}</span></a>
+                </td>
                 {% endfor %}
             </tr>
             {% endfor %}
