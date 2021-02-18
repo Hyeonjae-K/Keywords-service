@@ -32,9 +32,6 @@ def set_data():
 
                     dic[site].update({rec_time: [titles, urls]})
 
-    with open('./test.txt', "w", encoding="utf-8") as f:
-        f.write(str(dic))
-
 
 @app.route('/')
 def index():
