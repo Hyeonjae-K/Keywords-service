@@ -37,3 +37,7 @@ body {
 .keyword-link:hover {
     color: white;
 }
+
+.keyword-link span {
+    max-width: 100%;
+}
