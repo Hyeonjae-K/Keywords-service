@@ -42,7 +42,7 @@ def set_data():
 
 @app.route('/')
 def index():
-    # set_data()
+    set_data()
     return render_template("index.html")
 
 
