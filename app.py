@@ -45,6 +45,8 @@ def set_data():
 @app.route('/')
 def index():
     set_data()
+    print(data)
+    print(sites)
     return render_template("index.html", data=data, sites=sites)
 
 
