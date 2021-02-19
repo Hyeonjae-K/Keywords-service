@@ -31,7 +31,7 @@ def set_data():
                     title, space, url = f.readline().strip().rpartition(" ")
                     titles.append(title)
                     urls.append(url)
-                data_dic[site][data_time] = {"titles": titles, "urls": urls}
+                data_dic[site][data_time] = [titles, urls]
 
 
 @app.route('/')
