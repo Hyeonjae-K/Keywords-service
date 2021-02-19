@@ -85,9 +85,9 @@ def get_data():
 @app.route('/')
 def index():
     get_data()
-    get_sites()
     return render_template("test.html", data=data, sites=sites)
 
 
 if __name__ == '__main__':
+    get_sites()
     app.run()
