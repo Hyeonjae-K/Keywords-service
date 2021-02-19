@@ -38,7 +38,7 @@ def set_data():
 @app.route('/')
 def index():
     set_data()
-    return render_template("test.html", sites=data_dic)
+    return render_template("test.html", sites=sites_dic)
 
 
 if __name__ == '__main__':
