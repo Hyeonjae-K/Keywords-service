@@ -47,7 +47,7 @@ def index():
     set_data()
     print(sites_dic)
     print(data_dic)
-    return render_template("test.html", data=data_dic, sites=sites_dic)
+    return render_template("test.html", data=data_dic)
 
 
 # scheduler = BackgroundScheduler()
