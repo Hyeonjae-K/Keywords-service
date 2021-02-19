@@ -7,7 +7,7 @@ def random_string(string_len):
     return ''.join(random.choice(char_list) for i in range(string_len))
 
 
-sites = ["Google", "Nate", "Zum", "Dreamwiz", "KOREA.COM"]
+sites = ["Google", "Nate", "Zum", "DreamWiz", "KOREA.COM"]
 date = time.strftime("%Y%m%d")
 
 for hour in range(24):
