@@ -36,12 +36,20 @@
     {% for time in data["Google"] %}
     <table class="table table-dark table-striped table-style">
         <thead>
-            <tr scope="row">
+            <tr>
                 <th scope="row">{{ time }}</th>
                 {% for site in sites %}
                 <th scope="col"><a class="site-link" href="{{ sites[site] }}">{{ site }}</a></th>
                 {% endfor %}
             </tr>
+            {% for rank in range(10) %}
+            <tr>
+                <th scope="row">{{ rank }}</th>
+                {% for site in sites %}
+                <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}">{{ data[site][time][0][rank] }}</a></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
         </thead>
     </table>
     {% endfor %}
