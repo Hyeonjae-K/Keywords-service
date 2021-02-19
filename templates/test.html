@@ -46,7 +46,8 @@
             <tr>
                 <th scope="row">{{ rank }}</th>
                 {% for site in sites %}
-                <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}">{{ data[site][time][0][rank] }}</a></td>
+                <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}">{{ data[site][time][0][rank] }}</a>
+                </td>
                 {% endfor %}
             </tr>
             {% endfor %}
@@ -58,4 +59,5 @@
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -31,13 +31,12 @@ def get_data():
                     titles.append(title)
                     urls.append(url)
                 data[site].update({data_time: [titles, urls]})
-    print(data)
 
 
 @app.route('/')
 def index():
     get_data()
-    return render_template("test.html", data=data, sites=sites)
+    return render_template("index.html", data=data, sites=sites)
 
 
 get_sites()

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
-    <title>Hot Keywords</title>
+    <title>Test Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="../static/css/style.css" rel="stylesheet">
@@ -12,147 +12,46 @@
 <body>
     <!-- navigation bar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-bg">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-bg">
             <div class="container-fluid">
                 <a class="navbar-brand navbar-link" href="#">HOME</a>
-                <button class="navbar-toggler toggle-border" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="toggle-text-color">Menu</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <p>{{ sites }}</p>
                         {% for site in sites %}
-                        <a class="nav-link navbar-link" href="#">{{ site }}</a>
+                        <a class="nav-link navbar-link" href="{{ sites[site] }}">{{ site }}</a>
                         {% endfor %}
                     </div>
                 </div>
             </div>
         </nav>
     </header>
+
+
     <!-- ranking table -->
-<<<<<<< HEAD
-<<<<<<< HEAD
     {% for time in data["Google"] %}
     <table class="table table-dark table-striped table-style">
         <thead>
             <tr>
                 <th scope="row">{{ time }}</th>
                 {% for site in sites %}
-                <th scope="col"><a class="site-link" href="{{ sites[site] }}" target="_blank">{{ site }}</a></th>
+                <th scope="col"><a class="site-link" href="{{ sites[site] }}">{{ site }}</a></th>
                 {% endfor %}
             </tr>
-=======
-    <table class="table table-dark table-striped table-style">
-        <thead>
-=======
-    <table class="table table-dark table-striped table-style">
-        <thead>
->>>>>>> parent of 5401bf9 (매개변수로 순위 작성)
-          <tr>
-            <th scope="row">00시</th>
-            <th scope="col"><a class="site-link" href="#">Google</a></th>
-            <th scope="col"><a class="site-link" href="#">Nate</a></th>
-            <th scope="col"><a class="site-link" href="#">Zum</a></th>
-            <th scope="col"><a class="site-link" href="#">Dreamwiz</a></th>
-            <th scope="col"><a class="site-link" href="#">KOREA.COM</a></th>
-          </tr>
-<<<<<<< HEAD
->>>>>>> parent of 5401bf9 (매개변수로 순위 작성)
-=======
->>>>>>> parent of 5401bf9 (매개변수로 순위 작성)
-        </thead>
-        <tbody>
             {% for rank in range(10) %}
             <tr>
-<<<<<<< HEAD
-                <th scope="row">{{ rank + 1 }}</th>
-                {% for site in data %}
-                <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}" target="_blank"><span
-                            class="align-middle d-inline-block text-truncate">{{ data[site][time][0][rank] }}</span></a>
+                <th scope="row">{{ rank }}</th>
+                {% for site in sites %}
+                <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}">{{ data[site][time][0][rank] }}</a>
                 </td>
                 {% endfor %}
-=======
-                <th scope="row">1</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">7</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">8</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">9</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
-            </tr>
-            <tr>
-                <th scope="row">10</th>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Google-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Nate-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Zum-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">Dreamwiz-keyword</span></a></td>
-                <td><a class="keyword-link" href="#"><span class="align-middle d-inline-block text-truncate">KOREA.COM-keyword</span></a></td>
             </tr>
             {% endfor %}
-        </tbody>
+        </thead>
     </table>
     {% endfor %}
 
