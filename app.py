@@ -4,6 +4,7 @@ from flask import Flask, render_template
 
 
 app = Flask(__name__)
+sites_dic = {}
 data_dic = {}
 
 
@@ -13,13 +14,14 @@ def set_sites():
             site, space, url = f.readline().strip().rpartition(" ")
             if site == '':
                 break
-            data_dic[site] = {"url": url}
+            sites_dic[site] = {"url": url}
 
 
 def set_data():
     date = time.strftime("%Y%m%d")
-    for site in data_dic:
+    for site in sites_dic:
         path = './test-data/data/{site}/{date}.txt'.format(site=site, date=date)
+        data_dic[site] = {}
         with open(path, "r", encoding="utf-8") as f:
             while True:
                 data_time = f.readline().strip()
