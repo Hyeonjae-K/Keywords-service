@@ -49,8 +49,17 @@
 from flask import Flask, render_template
 import time
 app = Flask(__name__)
-sites = ["Google", "Nate", "Zum", "DreamWiz", "KOREA.COM"]
+sites = {}
 data = {}
+
+
+def get_sites():
+    with open("./test-data/data/sites.txt", "r", encoding="UTF-8") as f:
+        while True:
+            site, space, url = f.readline().strip().rpartition(" ")
+            if site == "":
+                break
+            sites[site] = url
 
 
 def get_data():
@@ -72,10 +81,12 @@ def get_data():
                 data[site].update({data_time: [titles, urls]})
     print(data)
 
+
 @app.route('/')
 def index():
     get_data()
-    return render_template("test.html", data=data)
+    get_sites()
+    return render_template("test.html", data=data, sites=sites)
 
 
 if __name__ == '__main__':
