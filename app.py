@@ -1,8 +1,10 @@
 from flask import Flask, render_template
 import time
+from apscheduler.schedulers.background import BackgroundScheduler
 app = Flask(__name__)
 sites = {}
 data = {}
+now = {}
 
 
 def get_sites():
@@ -33,14 +35,34 @@ def get_data():
                 data[site].update({data_time: [titles, urls]})
 
 
+def get_now_data():
+    with open("./test-data/data/now_ranking.txt", "r", encoding="UTF-8") as f:
+        while True:
+            site = f.readline().strip()
+            titles = []
+            urls = []
+            if site == "":
+                break
+            for i in range(10):
+                title, space, url = f.readline().strip().rpartition(" ")
+                titles.append(title)
+                urls.append(url)
+            now[site] = {"titles": titles, "urls": urls}
+    print(now)
+
+
 @app.route('/')
 def index():
     get_data()
-    return render_template("index.html", data=data, sites=sites)
+    return render_template("index.html", data=data, sites=sites, now=now)
 
 
 get_sites()
 get_data()
+get_now_data()
+scheduler = BackgroundScheduler()
+scheduler.add_job(get_now_data, 'interval', seconds=3)
+scheduler.start()
 
 if __name__ == '__main__':
     app.run()
