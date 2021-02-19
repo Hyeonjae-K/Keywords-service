@@ -31,8 +31,12 @@
         </nav>
     </header>
 
-    <!--  now ranking table  -->
+    <!-- now ranking title -->
+    <div class="desc-text">
+    <h2 class="btn btn-outline-info">실시간 순위</h2>
+    </div>
 
+    <!--  now ranking table  -->
     <table class="table table-dark table-hover table-style">
         <thead class="table-secondary">
             <tr>
@@ -56,8 +60,13 @@
             {% endfor %}
         </tbody>
     </table>
+    
+    <!-- before ranking title -->
+    <div class="desc-text">
+        <h2 class="btn btn-outline-info">시간별 순위</h2>
+    </div>
 
-    <!-- ranking table -->
+    <!-- before ranking table -->
     {% for time in data["Google"] %}
     <table class="table table-dark table-hover table-style">
         <thead class="table-secondary">
