@@ -7,13 +7,16 @@ app = Flask(__name__)
 data_dic = {}
 
 
-def set_data():
+def set_sites():
     with open('./test-data/data/sites.txt', 'r', encoding='utf-8') as f:
         while True:
             site, space, url = f.readline().strip().rpartition(" ")
             if site == '':
                 break
             data_dic[site] = {"url": url}
+
+
+def set_data():
     date = time.strftime("%Y%m%d")
     for site in data_dic:
         path = './test-data/data/{site}/{date}.txt'.format(site=site, date=date)
@@ -33,7 +36,7 @@ def set_data():
 
 @app.route('/')
 def index():
-    # set_data()
+    set_sites()
     return render_template("test.html")
 
 
