@@ -49,10 +49,6 @@ header {
     width: 100%;
 }
 
-.navbar-bg {
-    background-color: #564f6f;
-}
-
 .navbar-link {
     color: #d1d7e0;
     text-decoration: none;
@@ -60,12 +56,4 @@ header {
 
 .navbar-link:hover {
     color: #802bb1
-}
-
-.toggle-border {
-    border: thick double #2d283e;
-}
-
-.toggle-text-color {
-    color: #2d283e;
 }
