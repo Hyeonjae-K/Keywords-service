@@ -44,7 +44,7 @@
             </tr>
             {% for rank in range(10) %}
             <tr>
-                <th scope="row">{{ rank }}</th>
+                <th scope="row">{{ rank+1 }}</th>
                 {% for site in sites %}
                 <td><a class="keyword-link" href="{{ data[site][time][1][rank] }}">{{ data[site][time][0][rank] }}</a>
                 </td>
