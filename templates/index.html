@@ -31,17 +31,20 @@
         </nav>
     </header>
 
+    <!--  now ranking table  -->
 
     <!-- ranking table -->
     {% for time in data["Google"] %}
-    <table class="table table-dark table-striped table-style">
-        <thead>
+    <table class="table table-dark table-hover table-style">
+        <thead class="table-secondary">
             <tr>
-                <th scope="row">{{ time }}</th>
+                <th scope="row"><span class="col1-color">{{ time }}</span></th>
                 {% for site in sites %}
-                <th scope="col"><a class="site-link" href="{{ sites[site] }}">{{ site }}</a></th>
+                <th scope="col"><a class="site-link" href="{{ sites[site] }}"><span class="col1-color">{{ site }}</span></a></th>
                 {% endfor %}
             </tr>
+        </thead>
+        <tbody>
             {% for rank in range(10) %}
             <tr>
                 <th scope="row">{{ rank+1 }}</th>
@@ -51,7 +54,7 @@
                 {% endfor %}
             </tr>
             {% endfor %}
-        </thead>
+        </tbody>
     </table>
     {% endfor %}
 
