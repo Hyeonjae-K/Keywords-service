@@ -34,7 +34,7 @@ def set_data():
 @app.route('/')
 def index():
     set_data()
-    return render_template("test.html", name="HJ")
+    return render_template("test.html", data=data_dic)
 
 
 # scheduler = BackgroundScheduler()

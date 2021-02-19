@@ -5,6 +5,8 @@
     <title>Test Document</title>
 </head>
 <body>
-    <p>{{ name }}</p>
+    {% for site in data %}
+    <p>{{ site }}</p>
+    {% endfor %}
 </body>
 </html>
